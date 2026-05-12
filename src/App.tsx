@@ -8,6 +8,7 @@ import { HowItWorks } from './sections/HowItWorks';
 import { Features } from './sections/Features';
 import { AISection } from './sections/AISection';
 import { Roles } from './sections/Roles';
+import { Utilities } from './sections/Utilities';
 import { CTA } from './sections/CTA';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Features />
         <AISection />
         <Roles />
+        <Utilities />
         <CTA />
       </main>
       <Footer />
