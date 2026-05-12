@@ -7,7 +7,7 @@ export const CTA = () => {
     <section id="download" className="py-24 relative overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 bg-transparent -z-20 transition-colors duration-300" />
-      
+
       {/* Animated Background Blobs */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-brand-coral/10 dark:bg-brand-coral/20 blur-[100px] animate-pulse" />
@@ -15,14 +15,14 @@ export const CTA = () => {
       </div>
 
       <Container className="relative z-10">
-        <motion.div 
+        <motion.div
           className="glass-card relative rounded-[2.5rem] md:rounded-[3rem] overflow-hidden p-8 md:p-16 lg:p-24 text-center shadow-2xl"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
         >
-          
+
           {/* Inner Glow */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-linear-to-r from-brand-coral/10 to-brand-orange/10 rounded-full blur-[80px] -z-10" />
 
@@ -38,7 +38,7 @@ export const CTA = () => {
               great experience?
             </span>
           </h2>
-          
+
           <p className="text-lg md:text-xl text-grey-500 dark:text-grey-400 mb-12 max-w-2xl mx-auto leading-relaxed transition-colors duration-300">
             Join thousands of teams and friends who use Trevon to effortlessly manage their events, coordinate schedules, and build unforgettable memories.
           </p>

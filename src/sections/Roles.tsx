@@ -7,24 +7,24 @@ import { motion } from 'framer-motion';
 export const Roles = () => {
   const roles = [
     {
-      badge: 'Owner',
+      badge: 'HOST',
       title: 'Full Control',
-      desc: 'Can manage settings, delete the event, and invite anyone.',
+      desc: 'Create, manage, and delete the event. Complete access to all settings, members, and analytics.',
     },
     {
-      badge: 'Admin',
-      title: 'Manage Logistics',
-      desc: 'Can edit the itinerary, add tasks, and manage members.',
+      badge: 'CO-HOST',
+      title: 'Edit Rights',
+      desc: 'Help manage the event — edit itineraries, activities, and members — without deletion rights.',
     },
     {
-      badge: 'Collaborator',
-      title: 'Contribute',
-      desc: 'Can add suggestions and complete assigned tasks.',
+      badge: 'MEMBER',
+      title: 'View & Participate',
+      desc: 'See all event details, join chats, RSVP, and engage with checklists and activities.',
     },
     {
-      badge: 'Viewer',
-      title: 'Read Only',
-      desc: 'Can only view the itinerary and location details.',
+      badge: 'NON-MEMBER',
+      title: 'Limited Preview',
+      desc: 'Discover the event and send a join request. Great for public events and open trips.',
     },
   ];
 
@@ -32,9 +32,9 @@ export const Roles = () => {
     <section id="roles" className="py-24 relative overflow-hidden">
       <Container>
         <SectionHeading
-          label="For Teams"
-          title="Role-based access control"
-          subtitle="Keep everything organized by giving the right permissions to the right people."
+          label="FOR EVERY TEAM"
+          title="Roles that fit your group"
+          subtitle="Flexible permissions keep everyone in their lane — and your event on track."
           className="mb-16"
         />
 
