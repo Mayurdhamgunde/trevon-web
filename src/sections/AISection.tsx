@@ -79,17 +79,22 @@ export const AISection = () => {
   return (
     <section id="ai" className="py-32 relative overflow-hidden" ref={ref}>
 
-      {/* ── Atmosphere: deep indigo/blue — NO orange bleed ── */}
+      {/* ── Atmosphere ── */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-600/4 dark:via-indigo-600/8 to-transparent" />
+        {/* Light mode: soft radial ambient gradients for depth */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-600/[0.03] dark:via-indigo-600/8 to-transparent" />
+        {/* Top-left coral bloom — visible in light, subtle in dark */}
         <div className="absolute -top-1/4 -left-1/4 w-[700px] h-[700px]
-          bg-indigo-600/6 dark:bg-indigo-600/12 rounded-full blur-[160px] animate-orb-drift" />
+          bg-brand-coral/[0.07] dark:bg-indigo-600/12 rounded-full blur-[160px] animate-orb-drift" />
+        {/* Bottom-right navy haze */}
         <div className="absolute -bottom-1/4 -right-1/4 w-[700px] h-[700px]
-          bg-blue-700/5 dark:bg-violet-700/10 rounded-full blur-[160px] animate-orb-drift-r" />
+          bg-brand-navy/[0.05] dark:bg-violet-700/10 rounded-full blur-[160px] animate-orb-drift-r" />
+        {/* Center soft warm glow — light mode focal bloom */}
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2
-          w-[500px] h-[300px] bg-slate-600/4 dark:bg-slate-500/6 rounded-full blur-[100px]" />
+          w-[600px] h-[350px] bg-brand-orange/[0.04] dark:bg-slate-500/6 rounded-full blur-[120px]" />
+        {/* Bottom edge vignette */}
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2
-          w-[900px] h-[180px] bg-indigo-800/5 dark:bg-indigo-800/10 rounded-full blur-[80px]" />
+          w-[900px] h-[180px] bg-indigo-900/[0.04] dark:bg-indigo-800/10 rounded-full blur-[80px]" />
       </div>
 
       <Container>

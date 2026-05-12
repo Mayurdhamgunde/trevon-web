@@ -10,24 +10,33 @@ export const CTA = () => {
 
       {/* Animated Background Blobs */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-brand-coral/10 dark:bg-brand-coral/20 blur-[100px] animate-pulse" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-brand-orange/10 dark:bg-brand-orange/20 blur-[100px] animate-pulse" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-brand-coral/[0.09] dark:bg-brand-coral/20 blur-[120px] animate-pulse" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-brand-orange/[0.07] dark:bg-brand-orange/20 blur-[120px] animate-pulse" style={{ animationDelay: '2s' }} />
       </div>
 
       <Container className="relative z-10">
         <motion.div
-          className="glass-card relative rounded-[2.5rem] md:rounded-[3rem] overflow-hidden p-8 md:p-16 lg:p-24 text-center shadow-2xl"
+          className="glass-card relative rounded-[2.5rem] md:rounded-[3rem] overflow-hidden p-8 md:p-16 lg:p-24 text-center
+            shadow-[0_40px_100px_-20px_rgba(3,20,73,0.12),0_16px_40px_-8px_rgba(3,20,73,0.07)]
+            dark:shadow-2xl"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
         >
 
-          {/* Inner Glow */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-linear-to-r from-brand-coral/10 to-brand-orange/10 rounded-full blur-[80px] -z-10" />
+          {/* Inner Glow — more visible in light mode */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%]
+            bg-gradient-to-r from-brand-coral/[0.08] to-brand-orange/[0.06]
+            dark:from-brand-coral/10 dark:to-brand-orange/10
+            rounded-full blur-[80px] -z-10" />
 
           {/* Tagline Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-white/10 border border-grey-200 dark:border-white/10 shadow-sm mb-8 animate-bounce" style={{ animationDuration: '3s' }}>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full
+            bg-white/90 dark:bg-white/10
+            border border-grey-200/80 dark:border-white/10
+            shadow-[0_2px_12px_-2px_rgba(3,20,73,0.10)] dark:shadow-sm
+            mb-8 animate-bounce" style={{ animationDuration: '3s' }}>
             <span className="w-2 h-2 rounded-full bg-brand-coral animate-ping" />
             <span className="text-xs font-bold uppercase tracking-widest text-brand-navy dark:text-white">Start Planning Today</span>
           </div>
@@ -60,7 +69,10 @@ export const CTA = () => {
           <div className="mt-16 flex flex-col items-center justify-center gap-4 opacity-80">
             <div className="flex -space-x-4">
               {[...Array(5)].map((_, i) => (
-                <div key={i} className="w-12 h-12 rounded-full border-2 border-white dark:border-[#111827] bg-grey-200 dark:bg-grey-800 flex items-center justify-center overflow-hidden shadow-sm">
+                <div key={i} className="w-12 h-12 rounded-full border-2 border-white/90 dark:border-[#111827]
+                  bg-grey-100 dark:bg-grey-800
+                  shadow-[0_2px_8px_-2px_rgba(3,20,73,0.12)] dark:shadow-sm
+                  flex items-center justify-center overflow-hidden">
                   <svg className="w-6 h-6 text-grey-400 dark:text-grey-500" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                   </svg>

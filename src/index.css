@@ -154,7 +154,12 @@
 
 @layer base {
   body {
-    background-color: #f8f9fb;
+    /* Layered off-white: slightly warm, not flat pure white */
+    background-color: #f4f5f9;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 20% -10%, rgba(254,105,109,0.045) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 110%, rgba(3,20,73,0.04) 0%, transparent 55%),
+      radial-gradient(ellipse 70% 60% at 50% 50%, rgba(242,153,74,0.02) 0%, transparent 70%);
     color: var(--color-grey-900);
     font-family: var(--font-sans);
     transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
@@ -204,25 +209,35 @@
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.12'/%3E%3C/svg%3E");
   background-repeat: repeat;
   pointer-events: none;
   z-index: 0;
   mix-blend-mode: overlay;
+  opacity: 0.5;
+}
+
+.dark .noise-overlay::before {
+  opacity: 0.3;
 }
 
 /* ===== UTILITY: Glass card ===== */
 .glass-card {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(32px) saturate(200%);
-  -webkit-backdrop-filter: blur(32px) saturate(200%);
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  /* Premium frosted surface — warm off-white, not flat */
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(40px) saturate(180%) brightness(1.02);
+  -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(1.02);
+  border: 1px solid rgba(255, 255, 255, 0.85);
   box-shadow:
-    0 32px 64px -12px rgba(0, 0, 0, 0.08),
-    0 16px 32px -8px rgba(0, 0, 0, 0.04),
-    0 4px 12px -4px rgba(0, 0, 0, 0.03),
-    inset 0 1px 1px rgba(255, 255, 255, 0.9),
-    inset 0 -1px 1px rgba(0, 0, 0, 0.02);
+    /* Large ambient shadow for depth */
+    0 40px 80px -16px rgba(3, 20, 73, 0.09),
+    0 20px 40px -8px rgba(3, 20, 73, 0.06),
+    0 8px 16px -4px rgba(3, 20, 73, 0.04),
+    /* Subtle coral bloom at top edge */
+    0 -1px 0 0 rgba(254, 105, 109, 0.07),
+    /* Inner highlight */
+    inset 0 1px 1px rgba(255, 255, 255, 0.95),
+    inset 0 -1px 1px rgba(3, 20, 73, 0.03);
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 

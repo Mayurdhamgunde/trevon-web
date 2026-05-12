@@ -30,6 +30,13 @@ export const Roles = () => {
 
   return (
     <section id="roles" className="py-24 relative overflow-hidden">
+      {/* Ambient — layered depth for light mode */}
+      <div className="absolute top-1/2 -translate-y-1/2 -left-32 w-[500px] h-[500px]
+        bg-brand-coral/[0.05] dark:bg-brand-coral/8
+        rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute top-1/2 -translate-y-1/2 -right-32 w-[500px] h-[500px]
+        bg-brand-navy/[0.04] dark:bg-indigo-900/8
+        rounded-full blur-[130px] pointer-events-none" />
       <Container>
         <SectionHeading
           label="FOR EVERY TEAM"

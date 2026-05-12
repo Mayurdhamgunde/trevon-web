@@ -11,7 +11,10 @@ export const Stats = () => {
   ];
 
   return (
-    <section className="py-12 relative z-10">
+    <section className="py-12 relative z-10 overflow-hidden">
+      {/* Ambient lighting for light mode card separation */}
+      <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-[800px] h-[300px]
+        bg-brand-coral/[0.05] dark:bg-transparent rounded-full blur-[120px] pointer-events-none" />
       <Container>
         <motion.div 
           className="glass-card rounded-[2rem] p-8 md:p-12 flex flex-wrap justify-center gap-12 md:gap-24 text-center"

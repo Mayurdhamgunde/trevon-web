@@ -114,8 +114,13 @@ const cardVariants = {
 export const Features = () => {
   return (
     <section id="features" className="py-24 relative overflow-hidden">
-      {/* Subtle ambient glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-brand-coral/5 dark:bg-brand-coral/10 rounded-full blur-[120px] pointer-events-none" />
+      {/* Section ambient — light mode depth, dark mode subtle */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px]
+        bg-brand-coral/[0.06] dark:bg-brand-coral/10
+        rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[600px] h-[400px]
+        bg-brand-navy/[0.04] dark:bg-indigo-900/10
+        rounded-full blur-[120px] pointer-events-none" />
 
       <Container>
         <SectionHeading
@@ -134,8 +139,14 @@ export const Features = () => {
         >
           {features.map((feature, idx) => (
             <motion.div key={idx} variants={cardVariants} className="group">
-              <div className="relative h-full rounded-2xl border border-slate-200/50 dark:border-white/8 bg-white/70 dark:bg-white/[0.03] backdrop-blur-sm overflow-hidden transition-all duration-500 ease-out cursor-default
-                hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/10 dark:hover:shadow-black/40
+              <div className="relative h-full rounded-2xl border border-slate-200/60 dark:border-white/8
+                bg-white/85 dark:bg-white/[0.03]
+                backdrop-blur-sm overflow-hidden transition-all duration-500 ease-out cursor-default
+                shadow-[0_8px_32px_-8px_rgba(3,20,73,0.08),0_2px_8px_-2px_rgba(3,20,73,0.04)]
+                dark:shadow-none
+                hover:-translate-y-2
+                hover:shadow-[0_20px_48px_-12px_rgba(3,20,73,0.14),0_8px_16px_-4px_rgba(3,20,73,0.06)]
+                dark:hover:shadow-2xl dark:hover:shadow-black/40
                 hover:border-opacity-80">
 
                 {/* Gradient hover overlay */}

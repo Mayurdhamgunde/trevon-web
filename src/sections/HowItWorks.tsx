@@ -24,6 +24,13 @@ export const HowItWorks = () => {
 
   return (
     <section className="py-24 relative overflow-hidden">
+      {/* Light mode ambient depth */}
+      <div className="absolute top-0 left-0 w-[500px] h-[500px]
+        bg-brand-orange/[0.05] dark:bg-transparent
+        rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px]
+        bg-brand-coral/[0.04] dark:bg-transparent
+        rounded-full blur-[140px] pointer-events-none" />
       <Container>
         <SectionHeading
           label="Simple Process"
@@ -33,7 +40,7 @@ export const HowItWorks = () => {
 
         <div className="flex flex-col md:flex-row justify-between relative max-w-5xl mx-auto">
           {/* Connecting Line */}
-          <div className="hidden md:block absolute top-8 left-[10%] right-[10%] h-[2px] bg-grey-200 dark:bg-white/10 overflow-hidden">
+          <div className="hidden md:block absolute top-8 left-[10%] right-[10%] h-[2px] bg-grey-200/80 dark:bg-white/10 overflow-hidden">
              <motion.div 
                className="h-full bg-linear-to-r from-brand-coral to-brand-orange"
                initial={{ width: "0%" }}
@@ -52,7 +59,11 @@ export const HowItWorks = () => {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ delay: idx * 0.3, duration: 0.5 }}
             >
-              <div className="w-16 h-16 rounded-full bg-white dark:bg-[#0b101a] border-[3px] border-transparent bg-clip-padding relative z-10 shadow-xl mb-6 flex items-center justify-center group overflow-hidden">
+              <div className="w-16 h-16 rounded-full bg-white/90 dark:bg-[#0b101a]
+                border-[3px] border-transparent bg-clip-padding relative z-10
+                shadow-[0_8px_24px_-6px_rgba(3,20,73,0.14),0_2px_8px_-2px_rgba(3,20,73,0.08)]
+                dark:shadow-xl
+                mb-6 flex items-center justify-center group overflow-hidden">
                 <div className="absolute inset-0 rounded-full bg-gradient-to-br from-brand-coral to-brand-orange -z-10 group-hover:scale-110 transition-transform duration-500"></div>
                 <div className="absolute inset-[3px] rounded-full bg-white dark:bg-[#0b101a] -z-10"></div>
                 <span className="text-2xl font-bold bg-gradient-to-br from-brand-coral to-brand-orange bg-clip-text text-transparent">{idx + 1}</span>
