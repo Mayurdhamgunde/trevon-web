@@ -1,4 +1,4 @@
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Navbar } from './layouts/Navbar';
 import { Footer } from './layouts/Footer';
 import { Hero } from './sections/Hero';
@@ -10,8 +10,10 @@ import { AISection } from './sections/AISection';
 import { Roles } from './sections/Roles';
 import { Utilities } from './sections/Utilities';
 import { CTA } from './sections/CTA';
+import AnalyticsDashboard from './pages/AnalyticsDashboard';
 
-function App() {
+/** Main landing page — wrapped by Navbar + Footer */
+function LandingPage() {
   return (
     <div className="min-h-screen flex flex-col font-sans bg-white dark:bg-[#111827] transition-colors duration-300">
       <Navbar />
@@ -28,6 +30,23 @@ function App() {
       </main>
       <Footer />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        {/* ── Public landing page ── */}
+        <Route path="/" element={<LandingPage />} />
+
+        {/* ── Management / Analytics portal ── */}
+        <Route path="/analytics" element={<AnalyticsDashboard />} />
+
+        {/* Alias: /management-portal → same dashboard */}
+        <Route path="/management-portal" element={<AnalyticsDashboard />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
